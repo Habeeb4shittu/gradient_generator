@@ -1,0 +1,54 @@
+main {
+    width             : 90%;
+    max-width         : 25rem;
+    height            : 85%;
+    max-height        : 30rem;
+    background        : #859c007c;
+    border-radius     : .5rem;
+    box-shadow        : 0 0 .3rem .1rem #000000a2;
+    display           : grid;
+    grid-template-rows: 1fr auto;
+
+    .gradient {
+        width              : 100%;
+        background         : linear-gradient(to bottom right, #025252, #0c5353, #003030);
+        // background      : white;
+        border-radius      : .5rem .5rem 0 0;
+    }
+
+    .actions {
+        padding: 1rem;
+
+        .color-copier {
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+            gap            : .4rem;
+
+            .color-code {
+                background   : #adadadd5;
+                width        : fit-content;
+                padding      : 0.5rem;
+                border-radius: .2rem;
+                color        : #002e2e;
+                max-width    : 18rem;
+                overflow-x   : auto;
+                font-size    : .8rem;
+            }
+
+            .copy {
+                width        : 2rem;
+                height       : 2rem;
+                border-radius: .2rem;
+                cursor       : pointer;
+                background   : #adadadd5;
+                display      : grid;
+                place-items  : center;
+
+                .ico {
+                    color: #1f1d1d;
+                }
+            }
+        }
+    }
+}
