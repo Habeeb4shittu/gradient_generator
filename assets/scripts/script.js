@@ -7,28 +7,30 @@ $(".num-of-colors").on('input', function ()
 {
     let currentRange = $(this).val();
     let maxRange = $(this).prop("max");
+    console.log(currentRange);
     let colorPicker = $(".color-pickers").children().length;
-    let colors = []
     if (colorPicker >= currentRange)
     {
         let num = colorPicker - currentRange
         console.log($(".color-pickers").children());
         for (let i = 0; i < num; i++)
         {
+            colorPicker = $(".color-pickers").children().length;
             $(".color-pickers").children()[colorPicker - 1].remove()
         }
     } else if (colorPicker <= maxRange)
     {
+        let colors = []
         for (let i = colorPicker; i < currentRange; i++)
         {
             colors.push(`<input type="color"  class="color-picker">`)
         }
 
+        colors.forEach(el =>
+        {
+            $(".color-pickers").append(el)
+        });
     }
-    colors.forEach(el =>
-    {
-        $(".color-pickers").append(el)
-    });
     colorPickerChange()
 })
 let gradient;
